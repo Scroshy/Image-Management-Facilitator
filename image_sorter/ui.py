@@ -14,6 +14,14 @@ class ImageSorterUI(ctk.CTk):
         # --- 1. Main Window Setup ---
         self.title("CustomTkinter Image Sorter")
         self.geometry("1000x650")
+
+        icon_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "assets", "favicon.ico"))
+        if os.path.exists(icon_path):
+            try:
+                self.iconbitmap(icon_path)
+            except Exception:
+                pass
+
         ctk.set_appearance_mode("System")
         ctk.set_default_color_theme("blue")
 
