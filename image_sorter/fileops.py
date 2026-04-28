@@ -1,7 +1,13 @@
 import os
 import shutil
 
-VALID_EXTENSIONS = ('.png', '.jpg', '.jpeg', '.webp', '.bmp')
+try:
+    import pillow_heif
+    pillow_heif.register_heif_opener()
+except ImportError:
+    pass
+
+VALID_EXTENSIONS = ('.png', '.jpg', '.jpeg', '.webp', '.bmp', '.heic', '.heif')
 
 
 def load_image_paths(folder_path):
